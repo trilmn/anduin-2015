@@ -1,0 +1,43 @@
+body{
+    background: $base-background-color;
+}
+
+/* Mozilla based browsers */
+::-moz-selection {
+    background-color: $brand-primary;
+    color: #fff;
+}
+
+/* Works in Safari */
+::selection {
+    background-color: $brand-primary;
+    color: #fff;
+}
+
+
+a{
+    text-decoration:none;
+    @include transition(all .2s ease-in-out);
+
+    &:hover{
+    }
+}
+
+.container{
+    @include clearfix;
+}
+
+
+.notif-badge{
+    background-color: $brand-danger;
+    color: #fff;
+    font-size: em(12px);
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 100%;
+}
+
+.hide-text {
+    @include hide-text;
+}
+

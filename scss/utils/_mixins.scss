@@ -1,0 +1,25 @@
+@mixin border-radius ($curve){
+	-webkit-border-radius: $curve;
+	-moz-border-radius: $curve;
+	border-radius: $curve;
+}
+
+@mixin no-list {
+	margin: 0; padding: 0; list-style: none;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+@mixin gradient-cover($covercolor1, $covercolor2, $height){
+	content: "";
+	height: $height;
+	@include background(linear-gradient($covercolor1, $covercolor2) left repeat);
+	z-index: 1;
+}

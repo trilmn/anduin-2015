@@ -1,0 +1,512 @@
+html{
+	background-color: $brand-primary-dark;
+}
+
+body{
+	color: #B9C1D0;
+	font-size: 16px;
+	line-height: em(26px);
+	//padding: 1.5em;
+	background: $brand-primary-dark url(../images/bg-bottom.jpg) no-repeat bottom center;
+	position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	color: #fff;
+}
+
+#logo{
+	margin: 0 auto;
+	text-align: center;
+
+	.hide-text{
+        @include hide-text;
+        font-size: 0;
+        line-height: 0;
+	}
+
+	img{
+		height: 40px;
+	}
+}
+
+.container{
+	margin: 0 1.5em;
+}
+
+header{
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	top: 1.5em;
+	.notif-badge{
+		background-color: rgba($brand-primary, .6);
+		position: relative;
+		top: -10px;
+	}
+
+	a{
+		color: #fff;
+		&:hover{
+			color: $brand-primary;
+		}
+	}
+
+	.menu-item{
+		display: none;
+		@include media($medium){
+			display: block;
+		}
+	}
+
+	@include clearfix;
+}
+
+.btn{
+	font-size: em(14px);
+	font-weight: bold;
+	color: #fff;
+	margin: 1em 0 .5em 0;
+	padding: 5px 15px;
+	border-radius: 4px;
+	border: 1px solid #fff;
+	display: inline-block;
+	@include transition(all .2s ease-in-out);
+
+	&:hover{
+		background-color: #fff;
+		color: $brand-primary-dark;
+	}
+}
+
+
+#heroVid{
+	background: url('../images/bg-hero.jpg') no-repeat center bottom;
+	background-size: cover;
+	padding-top: 40px;
+	position: relative;
+	@include media($medium){
+    	max-height: 640px;
+	}
+
+	p{
+		color: #fff;
+
+		a{
+			color: #fff;
+
+			&:hover{
+				color: $brand-primary;
+			}
+		}
+	}
+
+	&:after{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		@include gradient-cover(transparent, $brand-primary-dark, 240px);
+	}
+
+	video#bgVideo {
+		visibility: hidden;
+		display: none;
+	}
+}
+
+#tagLine{
+	font-weight: 300;
+	font-size: em(34px);
+	text-align: center;
+	padding: 2em 0;
+	text-transform: capitalize;
+}
+
+section{
+	padding: 2em 0;
+
+	p{
+		position: relative;
+		z-index: 3;
+	}
+
+	.illustration{
+		text-align: center;
+		position: relative;
+		z-index: 2;
+	}
+
+		.illustration img{
+			max-width: 70%;
+		}
+
+}
+
+.section-title{
+	position: relative;
+	z-index: 3;
+	font-weight: bold;
+	font-size: em(24px);
+	display: block;
+	text-transform: uppercase;
+	margin: 1em 0 2em 0;
+	text-align: center;
+
+	&:before{
+		height: 2px;
+		width: 120px;
+		display: block;
+		content: "";
+		background-color: $brand-primary;
+		position: absolute;
+		left: 50%;
+		margin-left: -60px;
+		bottom: -.5em;
+	}
+}
+
+.list-member,
+.list-position{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	li{
+		margin: 0;
+		padding: 0;
+	}
+}
+
+//List position
+.list-position{
+	border-bottom: 2px dashed rgba(#BDC2CD,.2);
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	.position{
+		padding-top: 1em;
+		margin-top: 1em;
+		border-top: 2px dashed rgba(#BDC2CD,.2);
+
+		&:first-child{
+			border-top: none;
+		}
+	}
+
+	.title{
+		margin-bottom: 5px;
+	}
+
+	.btn{
+
+	}
+}
+
+//List Member
+$avatar-size: 96px;
+.list-member .member{
+	@include clearfix;
+	margin-bottom: 30px;
+	.avatar{
+		@include size($avatar-size);
+		border-radius: $base-border-radius;
+		border: 0;
+		background-color: lighten($brand-primary-dark, 2%);
+		float: left;
+	}
+
+	.name{
+		font-size: em(20px);
+	}
+
+	.title{
+		color: #496078;
+		margin: 3px 0;
+	}
+
+	.info{
+		margin-left: $avatar-size + 20px;
+	}
+
+	p{
+		margin-top: 10px;
+	}
+}
+
+#ourVision{
+	padding-top: 2em;
+	position: relative;
+}
+
+#ourCulture{
+	background-size: cover;
+	position: relative;
+
+	.slogan{
+		font-size: em(28px);
+		text-align: left;
+		margin: 0 0 20px 0;
+	}
+
+	@include media($medium){
+	    min-height: 400px;
+	}
+}
+
+#challenge{
+	position: relative;
+}
+
+footer{
+	margin-top: 1.5em;
+	text-align: center;
+
+	.right-content{
+		span{
+			display: none;
+		}
+	}
+	.list-sns{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li{
+			padding: 0;
+			margin: 5px 5px 0 0;
+			font-size: 0;
+			display: inline-block;
+			svg{
+				width: 38px;
+				circle, path{
+					@include transition(all .2s ease-in-out);
+				}
+			}
+
+			&:last-child{
+				margin-right: 0;
+			}
+
+			a:hover circle{	stroke: #fff;}
+			a:hover path{	fill: #fff;}
+		}
+	}
+}
+
+#challenge{
+	background-color: #131A26;
+}
+
+$max-parap: 580px;
+
+@include media($medium) {
+
+	body {
+		font-size: 16px;
+		//background-size: 100% auto;
+		background-image: none;
+	}
+
+	.container {
+		max-width: 980px;
+		margin: 0 auto;
+	}
+
+	header {
+		#logo {
+			float: left;
+		}
+
+		.menu-item {
+			float: right;
+			margin-top: 10px;
+		}
+	}
+
+	section {
+		padding: 3em 0;
+	}
+
+	.section-title {
+		text-align: left;
+		margin: 1em 0;
+		display: inline-block;
+
+		&:before {
+			height: 1em;
+			width: 2px;
+			display: block;
+			content: "";
+			background-color: $brand-primary;
+			position: absolute;
+			left: -20px;
+			margin-left: 0;
+			top: 50%;
+			margin-top: -.5em;
+		}
+	}
+
+	#heroVid {
+		position: relative;
+		overflow: hidden;
+		background-image: none;
+		text-align: center;
+
+		video#bgVideo {
+		  display: block;
+		  visibility: visible;
+		  position: absolute; // Play the video in full screen mode
+		  top: 0px;
+		  left: 0px;
+		  min-width: 100%;
+		  min-height: 100%;
+		  z-index: 0; // Put the video behind all other elements
+		  opacity: .5;
+		}
+
+
+		#tagLine{
+			max-width: 830px;
+			margin: 0 auto;
+			padding: 3em 0 1em 0;
+			font-size: rem(50px);
+			position: relative;
+			z-index: 2;
+		}
+
+		p{
+			margin: 0 auto 1em auto;
+			max-width: 580px;
+		}
+	}
+
+	#ourVision{
+		@include radial-gradient(50% -100%, lighten($brand-primary-dark, 10%) 0%, $brand-primary-dark 70%);
+        //background: $brand-primary-dark url('../images/1024.png') no-repeat center center;
+        background-size: cover;
+
+		.content-wrap{
+			margin: 1em auto;
+			max-width: 640px;
+			text-align: center;
+		}
+
+	}
+
+	#challenge {
+		background-color: #000;
+		position: relative;
+
+		.content-wrap {
+			width: 60%;
+			padding: 4em 0;
+			float: right;
+		}
+
+		.illustration {
+			background: transparent url('../images/black-light.jpg') no-repeat center center;
+			background-size: cover;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+		    right: 60%;
+		    height: 100%;
+		    width: 40%;
+		}
+	}
+
+	#ourCulture {
+		padding: 6em 0;
+		text-align: center;
+
+		p{
+			margin: 1em auto;
+			max-width: 640px;
+		}
+
+		@include radial-gradient(50% -100%, lighten($brand-primary-dark, 10%) 0%, $brand-primary-dark 70%);
+	}
+
+	#anduinTeam {
+        background-color: #131A26;
+        position: relative;
+
+		.member {
+			margin-bottom: rem(50px);
+
+			.avatar {
+				@include size(128px);
+			}
+			.info {
+				margin-left: 150px;
+
+				p {
+					margin-left: 0;
+				}
+			}
+		}
+
+		.content-wrap {
+			width: 60%;
+			padding: 0 2em 0 0;
+		}
+
+		.imgholder {
+			background: transparent url(../images/team.jpg) no-repeat center center;
+			background-size: cover;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+		    left: 60%;
+		    height: 100%;
+		    width: 40%;
+		}
+	}
+
+	#anduinTeam .member,
+	#hiring .position {
+		@include span-columns(6);
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+
+
+	#hiring .list-position {
+		@include clearfix;
+
+		.position {
+			border: none;
+		}
+	}
+
+	footer {
+        margin: 0;
+        padding: 0 0 .5em;
+
+		.left-content {
+			float: left;
+		}
+
+		.right-content {
+			float: right;
+			span {
+				display: inline-block;
+			}
+
+			.list-sns {
+				float: right;
+				margin-left: 10px;
+				.sns {
+					position: relative;
+					margin-top: -8px;
+				}
+			}
+		}
+	}
+}
